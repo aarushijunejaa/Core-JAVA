@@ -1,76 +1,75 @@
-// OperatorsDemo.java
+// Java Program to demonstrate different types of operators
+class OperatorsDemo {
 
-/*
- * Topic: Type Conversion, Assignment, Relational & Logical Operators in Java
- *
- * 1. Type Conversion:
- *    - Widening (implicit): smaller → larger type (safe conversion)
- *    - Narrowing (explicit): larger → smaller type (needs casting)
- *
- * 2. Assignment Operators:
- *    - =, +=, -=, *=, /=, %=
- *
- * 3. Relational Operators:
- *    - ==, !=, >, <, >=, <=
- *    - Used to compare values → result is boolean
- *
- * 4. Logical Operators:
- *    - && (AND), || (OR), ! (NOT)
- *    - Used to combine boolean expressions
- */
-
-public class OperatorsDemo {
     public static void main(String[] args) {
-        
-        // -------------------------
-        // 1. Type Conversion
-        // -------------------------
-        int intVal = 10;
-        double doubleVal = intVal;  // Widening (int → double, automatic)
-        System.out.println("Widening Conversion: int " + intVal + " → double " + doubleVal);
 
-        double d = 9.78;
-        int narrowedInt = (int) d;  // Narrowing (double → int, explicit cast)
-        System.out.println("Narrowing Conversion: double " + d + " → int " + narrowedInt);
+        // --------- 1. Arithmetic Operators ---------
+        int a = 10, b = 5;
+        System.out.println("Arithmetic Operators:");
+        System.out.println("a + b = " + (a + b));
+        System.out.println("a - b = " + (a - b));
+        System.out.println("a * b = " + (a * b));
+        System.out.println("a / b = " + (a / b));
+        System.out.println("a % b = " + (a % b));
+        System.out.println();
 
-        // -------------------------
-        // 2. Assignment Operators
-        // -------------------------
-        int a = 5;
-        System.out.println("\nAssignment Operators:");
-        a += 3;  // a = a + 3
-        System.out.println("a += 3 → " + a);
-        a -= 2;  // a = a - 2
-        System.out.println("a -= 2 → " + a);
-        a *= 4;  // a = a * 4
-        System.out.println("a *= 4 → " + a);
-        a /= 3;  // a = a / 3
-        System.out.println("a /= 3 → " + a);
-        a %= 5;  // a = a % 5
-        System.out.println("a %= 5 → " + a);
+        // --------- 2. Relational Operators ---------
+        System.out.println("Relational Operators:");
+        System.out.println("a > b  : " + (a > b));
+        System.out.println("a < b  : " + (a < b));
+        System.out.println("a == b : " + (a == b));
+        System.out.println("a != b : " + (a != b));
+        System.out.println("a >= b : " + (a >= b));
+        System.out.println("a <= b : " + (a <= b));
+        System.out.println();
 
-        // -------------------------
-        // 3. Relational Operators
-        // -------------------------
-        int x = 10, y = 20;
-        System.out.println("\nRelational Operators:");
-        System.out.println("x == y → " + (x == y));
-        System.out.println("x != y → " + (x != y));
-        System.out.println("x > y  → " + (x > y));
-        System.out.println("x < y  → " + (x < y));
-        System.out.println("x >= 10 → " + (x >= 10));
-        System.out.println("y <= 20 → " + (y <= 20));
+        // --------- 3. Logical Operators ---------
+        boolean x = true, y = false;
+        System.out.println("Logical Operators:");
+        System.out.println("x && y = " + (x && y));  // AND
+        System.out.println("x || y = " + (x || y));  // OR
+        System.out.println("!x = " + (!x));          // NOT
+        System.out.println();
 
-        // -------------------------
-        // 4. Logical Operators
-        // -------------------------
-        boolean cond1 = (x < y);   // true
-        boolean cond2 = (x > 5);   // true
-        boolean cond3 = (x == y);  // false
+        // --------- 4. Unary Operators ---------
+        int c = 5;
+        System.out.println("Unary Operators:");
+        System.out.println("c = " + c);
+        System.out.println("++c = " + (++c)); // pre-increment
+        System.out.println("--c = " + (--c)); // pre-decrement
+        System.out.println("-c = " + (-c));   // unary minus
+        System.out.println();
 
-        System.out.println("\nLogical Operators:");
-        System.out.println("cond1 && cond2 → " + (cond1 && cond2)); // true && true → true
-        System.out.println("cond1 || cond3 → " + (cond1 || cond3)); // true || false → true
-        System.out.println("!cond3 → " + (!cond3));                  // !false → true
+        // --------- 5. instanceof Operator ---------
+        System.out.println("instanceof Operator:");
+        OperatorsDemo obj = new OperatorsDemo();
+        System.out.println("obj instanceof OperatorsDemo : " + (obj instanceof OperatorsDemo));
+        System.out.println();
+
+        // --------- 6. Assignment Operators ---------
+        System.out.println("Assignment Operators:");
+        int num = 10;
+        num += 5;  // num = num + 5
+        System.out.println("After num += 5 : " + num);
+        num *= 2;  // num = num * 2
+        System.out.println("After num *= 2 : " + num);
+        System.out.println();
+
+        // --------- 7. Ternary Operator ---------
+        System.out.println("Ternary Operator:");
+        int max = (a > b) ? a : b;
+        System.out.println("Max of a and b is: " + max);
+        System.out.println();
+
+        // --------- 8. Bitwise Operators ---------
+        int p = 5;   // 0101
+        int q = 3;   // 0011
+        System.out.println("Bitwise Operators:");
+        System.out.println("p & q = " + (p & q));   // AND
+        System.out.println("p | q = " + (p | q));   // OR
+        System.out.println("p ^ q = " + (p ^ q));   // XOR
+        System.out.println("~p = " + (~p));         // NOT
+        System.out.println("p << 1 = " + (p << 1)); // Left shift
+        System.out.println("p >> 1 = " + (p >> 1)); // Right shift
     }
 }
